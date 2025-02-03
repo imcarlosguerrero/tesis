@@ -1,0 +1,210 @@
+\documentclass[11pt,twoside]{thesis}
+%\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{graphics}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage[table]{xcolor} 
+\usepackage{subfig}
+\usepackage{blindtext}
+\usepackage{longtable}
+\usepackage{csquotes}
+
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{5pt plus 2pt minus 2pt}
+
+\newcommand{\namesigdate}[2][5cm]{%
+\begin{minipage}{#1}
+    #2 \vspace{1.5cm}\hrule\smallskip
+\end{minipage}
+}
+
+\newcommand*{\SignatureAndDate}[1]{%
+    \par\noindent\makebox[2.5in]{\hrulefill}%
+    \par\noindent\makebox[2.5in][l]{#1}%
+}%
+
+\newcommand*{\SignatureAuthor}[1]{%
+    \par\noindent\makebox[2.5in]{\hrulefill}
+    \par\noindent\makebox[2.5in][l]{#1}
+    \par\noindent\makebox[2.5in][l]{COD: 8955760}
+}%
+
+\setcounter{secnumdepth}{5}
+
+
+%%%%%%%%%%%%%%%%
+% TITULO DEL PROYECTO
+%%%%%%%%%%%%%%%%
+\titulo{Sistema accesible para la generaci\'on de dietas saludables de costo m\'inimo con consideraciones de econom\'ia y nutrici\'on personalizadas}
+
+%%%%%%%
+% AUTORES
+%%%%%%%
+\autorA{8955760}{Carlos Steven Guerrero Betancourth}
+
+%%%%%%%
+% FECHA DE ENTREGA
+%%%%%%%
+
+\fecha{Enero 2025}
+
+%%%%%%%%%%%%%%%%%
+% DIRECTOR DEL PROYECTO
+% DIRECTOR DE CARRERA
+%%%%%%%%%%%%%%%%%
+
+\directorproyecto{MSc.}{Daniel Enrique Gonz\'alez G\'omez}
+\directorcarrera{Dr.}{Gerardo Mauricio Sarria Montemiranda}
+
+\makeindex{}
+
+\input{format}
+
+
+\begin{document}
+
+
+%carta 1
+\noindent Santiago de Cali, Enero 2025.
+\\
+\\
+\\
+\\
+\\
+\\
+Se\~nores.
+\\
+\textbf{Pontificia Universidad Javeriana Cali.}
+\\
+Dr. Gerardo Mauricio Sarria.
+\\
+Director de Carrera de Ingenier\'ia de Sistemas y Computaci\'on.
+\\
+Cali.
+\\
+\\
+Cordial Saludo.
+\\
+\\
+\\
+\\
+\noindent Por medio de la presente me permito informarle que el estudiante de Ingenier\'ia de Sistemas y Computaci\'on, Carlos Steven Guerrero Betancourth (cod: 8955760) trabaj\'o bajo mi direcci\'on en el proyecto de grado titulado ``Sistema accesible para la generaci\'on de dietas saludables de costo m\'inimo con consideraciones de econom\'ia y nutrici\'on personalizadas'' el cual se encuentra finalizado y listo para sustentaci\'on.
+\\
+\\
+Atentamente,
+\\
+\\
+
+\begin{figure}[H]
+    \raggedright  
+    \includegraphics[width=5cm]{img/firmaDaniel.png}
+\end{figure}
+\SignatureAndDate{MSc. Daniel Enrique Gonz\'alez G\'omez}
+
+%Carta 2
+\newpage
+\noindent Santiago de Cali, Enero 2025.
+\\
+\\
+\\
+\\
+\\
+\\
+Se\~nores.
+\\
+\textbf{Pontificia Universidad Javeriana Cali.}
+\\
+Dr. Gerardo Mauricio Sarria.
+\\
+Director de Carrera de Ingenier\'ia de Sistemas y Computaci\'on.
+\\
+Cali.
+\\
+\\
+\\
+\\
+\\
+\\
+Cordial Saludo.
+\\
+\\
+\\
+\\
+\noindent Me permito presentar a su consideraci\'on el trabajo de grado titulado ``Sistema accesible para la generaci\'on de dietas saludables de costo m\'inimo con consideraciones de econom\'ia y nutrici\'on personalizadas'' con el fin de cumplir con los requisitos exigidos por la Universidad para llevar a cabo el proyecto de grado y posteriormente optar al t\'itulo de Ingeniero de Sistemas y Computaci\'on.
+\\
+\\
+\noindent Al firmar aqu\'i, doy fe que entiendo y conozco las directrices para la presentaci\'on de trabajos de grado de la Facultad de Ingenier\'ia aprobadas el 26 de Noviembre de 2009, donde se establecen los plazos y normas para el desarrollo del anteproyecto y del trabajo de grado.
+\\
+\\
+\\
+\\
+\\
+Atentamente,
+\\
+\\
+\\
+\\
+\SignatureAuthor{Carlos Steven Guerrero Betancourth}
+
+\newpage
+
+\floatplacement{figure}{htbp}
+\maketitle
+\chapter*{Abstract} \input{abstract-eng}
+\chapter*{Resumen} \input{abstract}
+\setcounter{tocdepth}{5}
+\tableofcontents
+ \listoffigures
+ \listoftables
+
+\dominitoc
+\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCCION
+%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introducci\'on}
+\input{introduction}
+
+\chapter{Descripci\'on del Problema}
+\input{descripcion}
+
+\chapter{Marco Te\'orico y Trabajos relacionados}
+\input{marco}
+
+\chapter{Metodolog\'ia, An\'alisis y Dise\~no}
+\input{diseno}
+
+\chapter{Implementaci\'on}
+\input{implementacion}
+
+\chapter{Pruebas}
+\input{pruebas}
+
+\chapter{Despliegue}
+\input{despliegue}
+
+\chapter{Mantenimiento}
+\input{mantenimiento}
+
+\chapter{Conclusiones}
+\input{conclusiones}
+
+\chapter{Trabajo Futuro}
+\input{futuro}
+\bibliographystyle{ieeetr}
+\bibliography{biblio}
+\end{document}

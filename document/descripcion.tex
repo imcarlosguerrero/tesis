@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%
+% Analisis
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Planteamiento del Problema}
+
+\noindent La mala alimentaci\'on derivada de problemas econ\'omicos ha sido un problema constante en la historia de Colombia. \cite{RelacionEntreFactor} Esta situaci\'on afecta a diversos grupos poblacionales con necesidades nutricionales espec\'ificas que se pueden considerar grupos vulnerables, tales como ni\~{n}os, mujeres embarazadas, ancianos; tambi\'en se tiene en cuenta que debido a la naturaleza de esta problem\'atica, puede afectar a toda la poblaci\'on en general. Las afectaciones causadas por la desnutrici\'on pueden variar dependiendo de la poblaci\'on espec\'ifica en la que se presente, pero algunos de sus efectos negativos pueden ser: enfermedades cardiovasculares, respiratorias, \'oseas, entre otras.\cite{pelaezDesnutricionEnfermedad} El gobierno nacional cuenta con datos relevantes a este problema, tales como los valores nutricionales de alimentos que se consumen en diversas regiones del pa\'is, as\'i como sus costes en las principales centrales de abastos, aunque no cuenta con datos precisos acerca de los precios en sitios m\'as comunes de cara al consumidor final, tales como tiendas de barrio o supermercados de cadena, pero, a pesar de poseer todos estos datos, el gobierno no cuenta con las herramientas necesarias para su debido procesamiento para la obtenci\'on de informaci\'on que permita una correcta toma de decisiones con la cual se pueda mejorar la situaci\'on de la mala alimentaci\'on en la poblaci\'on m\'as pobre del pa\'is.
+\\
+\\
+Como respuesta a esta problem\'atica, se crea Foodprice, el cual es un proyecto de la Pontificia Universidad Javeriana Cali que busca desarrollar un paquete en R para el c\'alculo de dietas de costo m\'inimo que garanticen la suficiente nutrici\'on de las personas en base a sus caracter\'isticas, con esto se buscar\'a analizar si es posible, a d\'ia de hoy, con los ingresos de las personas econ\'omicamente vulnerables del pa\'is, contar con una dieta saludable.
+\\
+\\
+Ser\'a sobre este paquete se construir\'a el sistema accesible para la generaci\'on de dietas saludables de costo m\'inimo con consideraciones de econom\'ia y nutrici\'on personalizadas. Esto implica varios desaf\'ios, como la obtenci\'on de precios representativos de cara al consumidor, la ampliaci\'on del paquete Foodprice para consumirse a trav\'es de otra tecnolog\'ia y conectarse de forma eficiente y escalable con aplicaciones web, y poder actualizar su base de datos de forma sencilla, manteniendo as\'i valores que reflejen la realidad del mercado. Tambi\'en se requiere el desarrollo de una aplicaci\'on web que utilice este sistema, lo que implica resolver problemas relacionados con la interfaz de usuario, la accesibilidad y la optimizaci\'on del rendimiento para garantizar una experiencia fluida para la poblaci\'on objetivo. En resumen, el problema computacional consiste en dise\~{n}ar y desarrollar un sistema integral que permita expandir Foodprice de manera efectiva y accesible. Es as\'i como se formulan las siguientes preguntas:
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Formulaci\'on}
+\noindent?`C\'omo desarrollar un sistema accesible para generar una dieta saludable de costo m\'inimo que logre un balance entre econom\'ia y nutrici\'on seg\'un las caracter\'isticas de la persona?
+
+\subsection{Sistematizaci\'on}
+\begin{itemize}
+    \item?`C\'omo dise\~{n}ar un sistema para la obtenci\'on de precios que se acoplen a la realidad del consumidor promedio?
+
+    
+    \item?`C\'omo dise\~{n}ar un sistema que permita generar una dieta saludable de costo m\'inimo seg\'un las caracter\'isticas de la persona y c\'omo dise\~{n}ar una aplicaci\'on  web que permita utilizar el sistema de una forma satisfactoria por parte de la poblaci\'on objetivo?
+    
+    \item?`C\'omo implementar los sistemas y la aplicaci\'on web?
+        
+    \item?`C\'omo validar el sistema implementado?
+\end{itemize}
+
+\section{Objetivos} \label{sec:objetivos}
+\subsection{Objetivo General}
+\noindent Desarrollar un sistema que permita la generaci\'on de los costos m\'inimos y la asequibilidad de una dieta saludable discriminadas por edad y sexo, seg\'un su nivel de ingresos.
+
+\subsection{Objetivos Espec\'ificos}
+\begin{enumerate}
+    \item Dise\~{n}ar un sistema que permita la obtenci\'on de precios que se acoplen a la realidad del consumidor promedio.
+    
+    \item Dise\~{n}ar un sistema que permita generar una dieta saludable de costo m\'inimo seg\'un las caracter\'isticas de la persona, y una aplicaci\'on  web que permita utilizar el sistema de una forma satisfactoria por parte de la poblaci\'on objetivo.
+    
+    \item Implementar los sistemas y la aplicaci\'on web.
+    
+    \item Validar el sistema implementado
+    
+\end{enumerate}
+
+\section{Justificaci\'on}
+\noindent La desnutrici\'on en Colombia es un problema que se encuentra estrechamente relacionado con la capacidad econ\'omica de las personas, siendo altamente mayor en comunidades que se encuentran en condici\'on de pobreza o indigencia\cite{DesnutricionPobrezaVan}, causando incluso graves consecuencias como las muertes infantiles por enfermedades relacionadas con la desnutrici\'on\cite{restrepoMuertesPorDesnutricion2020}. Esto se debe a que como resultado de la situaci\'on en la que viven estas personas, no pueden contar con una dieta balanceada que cubra todas las necesidades cal\'oricas y nutricionales que su cuerpo requiere.
+Como un posible apoyo para reducir esta problem\'atica, se han planteado proyectos como lo es Foodprice.
+\\
+\\
+Foodprice es un proyecto de la Pontificia Universidad Javeriana que busca el desarrollo de un paquete en R que permita el c\'alculo de dietas saludables teniendo en cuenta un presupuesto l\'imite, sin embargo, dicho proyecto basa sus datos de precios de alimentos en el Sistema de Informaci\'on de Precios y Abastecimiento del Sector Agropecuario (SIPSA) del Departamento Administrativo Nacional de Estad\'istica (DANE), lamentablemente, dicha base de datos provee de precios basados en centrales mayoristas de las principales ciudades del pa\'is, por lo que los c\'alculos realizados se encuentran algo alejados de la realidad de las personas m\'as pobres del pa\'is, adem\'as de que las dietas generadas son, de momento, para grupos espec\'ificos de poblaci\'on, no para individuos particulares, esto agregado a que se trata de un paquete en R, imposibilita bastante su uso por parte de las personas econ\'omicamente vulnerables para que estas puedan conocer una dieta adecuada a sus necesidades nutricionales.
+\\
+\\
+Para que un proyecto as\'i logre impactar directamente la vida de las personas que se encuentran en situaciones vulnerables, es primordial desarrollar herramientas de f\'acil acceso y utilizaci\'on, que no requieran de un conocimiento t\'ecnico para su uso, ni de hardware especializado para su ejecuci\'on. Tomando en cuenta la situaci\'on socioecon\'omica de la poblaci\'on objetivo de este tipo de proyectos, una opci\'on adecuada parece ser una aplicaci\'on web que funcione de forma adecuada tanto en computadoras personales como en tel\'efonos m\'oviles, y que no requiera que el equipo sea de \'ultima generaci\'on para funcionar correctamente. Hoy en d\'ia, muchas personas tienen acceso a internet y pueden usar computadoras en bibliotecas p\'ublicas. Una aplicaci\'on web es sencilla, no requiere instalaci\'on ni configuraci\'on, y los navegadores est\'an disponibles en pr\'acticamente todos los tel\'efonos m\'oviles.
+
+
+
+\section{Delimitaciones y Alcances}
+\noindent El proyecto consistir\'a en el desarrollo de una aplicaci\'on web que permita generar una dieta balanceada de costo m\'inimo, la cu\'al supla las necesidades nutricionales de la persona, en base a par\'ametros de sus caracter\'isticas f\'isicas.
+\\
+\\
+El sistema generar\'a una dieta de coste m\'inimo, de acuerdo con caracter\'isticas f\'isicas como lo son la edad, sexo, y condiciones particulares como el embarazo. Se contar\'a con una base de datos que contenga la informaci\'on de precios de diferentes alimentos y su valor nutricional, esta base de datos se mantendr\'a actualizada por medio de un sistema de web scraping. Para utilizar estos valores con el fin de generar una dieta de bajo costo adecuada a las necesidades particulares de la persona.
+\\
+\\
+El proyecto contar\'a con una base de datos que refleje la realidad de los precios que se encuentran en un supermercado colombiano, la decisi\'on de el supermercado que se usar\'a en el proyecto se presentar\'a m\'as adelante despu\'es de estudiar las opciones m\'as viables. Los precios que se observar\'an en este proyecto estar\'an limitados a Cali, con la posibilidad a futuro de expandirlo a m\'as ciudades del pa\'is.
+\\
+\\
+La aplicaci\'on web que se desarrolle como parte de este proyecto, tendr\'a como objetivo principal una f\'acil utilizaci\'on y un funcionamiento correcto en una amplia gama de dispositivos. La informaci\'on que se le entregar\'a al usuario ser\'a una lista de alimentos crudos, junto con la cantidad m\'inima que necesitan consumir diariamente de cada uno, para tener una dieta que se ajuste a sus necesidades. Esto acompa\~{n}ado del precio para cada alimento que tendr\'ia la cantidad de este, adem\'as del precio total diario de dieta. Todos estos precios ser\'an en peso colombiano, y las cantidades de los alimentos se presentar\'an en gramos, tambi\'en, se entregar\'an gr\'aficas como gr\'aficos circulares, para ilustrar con mayor facilidad la cantidad de cada elemento que se consumir\'ia diariamente en esta dieta, finalmente, se permitir\'a la eliminaci\'on de ciertos alimentos no preferidos por el usuario y se calcular\'a la dieta con base en la ausencia de dicho alimento.
+
+
+\subsection{Entregables}
+\noindent Al finalizar el proyecto se realizar\'a la entrega de lo siguiente:
+\begin{itemize}
+    \item Documento de tesis con el dise\~{n}o y la planificaci\'on del sistema de generaci\'on de dietas balanceadas de costo m\'inimo, as\'i como un registro de lo que se realiz\'o y los problemas que se hayan presentado durante el desarrollo.
+
+    \item Prototipo funcional del Sistema accesible para la generaci\'on de dietas saludables de costo m\'inimo con consideraciones de econom\'ia y nutrici\'on personalizadas.
+
+\end{itemize}

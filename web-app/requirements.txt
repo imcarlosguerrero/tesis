@@ -1,0 +1,11 @@
+# Database
+beanie
+
+# Web Application
+fastapi
+uvicorn[standard]
+requests
+
+# Utilities
+pydantic
+orjson
