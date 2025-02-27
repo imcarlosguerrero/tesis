@@ -1,5 +1,7 @@
 from web_scraper import get_product, initialize_webdriver
 from multiprocessing import Pool
+from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, TimeoutError
+import concurrent.futures
 import json
 import os
 
@@ -160,5 +162,49 @@ def scrape_product(product):
 
 if __name__ == "__main__":
     clean_results_folder()
-    with Pool(3) as p:
-        p.map(scrape_product, products)
+    max_retries = 3  # maximum number of attempts per product
+    task_timeout = 120  # seconds before a task is considered timed out
+
+    with ProcessPoolExecutor(max_workers=6) as executor:
+        # Dictionary to hold futures keyed by product
+        futures = {product: executor.submit(scrape_product, product) for product in products}
+        # Tracker for available retries per product
+        retries = {product: 0 for product in products}
+
+        while futures:
+            # Wait up to task_timeout seconds for any future to complete
+            done, _ = wait(futures.values(), timeout=task_timeout, return_when=FIRST_COMPLETED)
+            
+            # If no task finished in the timeout period, handle timeouts
+            if not done:
+                # All running tasks have timed out. Cancel and retry.
+                for product, future in list(futures.items()):
+                    if not future.done():
+                        future.cancel()
+                        retries[product] += 1
+                        if retries[product] < max_retries:
+                            print(f"Timeout for {product}. Retrying (attempt {retries[product]+1}/{max_retries})...")
+                            futures[product] = executor.submit(scrape_product, product)
+                        else:
+                            print(f"Failed retrieving {product} after {max_retries} retries.")
+                            del futures[product]
+                continue
+
+            # Process tasks that completed within the timeout
+            for product, future in list(futures.items()):
+                if future.done():
+                    try:
+                        future.result()
+                    except Exception as e:
+                        retries[product] += 1
+                        if retries[product] < max_retries:
+                            print(f"Exception for {product}: {e}. Retrying (attempt {retries[product]+1}/{max_retries})...")
+                            futures[product] = executor.submit(scrape_product, product)
+                        else:
+                            print(f"Failed retrieving {product} after {max_retries} retries.")
+                    # Remove product if successfully processed or max retries exhausted
+                    if product in futures and future.done() and retries[product] >= max_retries:
+                        del futures[product]
+                    elif product in futures and future.done() and retries[product] < max_retries:
+                        # Check if the last submission succeeded by next loop iteration
+                        del futures[product]

@@ -279,6 +279,8 @@ def get_product(city, store, product_name):
                 }
             )
 
+    driver.quit()
+
     return products
 
 
